@@ -13,6 +13,7 @@ public class ThreadLocalLogTrace implements LogTrace{
 
 //    private TraceId traceIdHolder; //traceId 동기화, 동시성 이슈 발생
     private ThreadLocal<TraceId> traceIdHolder = new ThreadLocal<>();
+
     @Override
     public TraceStatus begin(String message) {
         syncTraceId();
